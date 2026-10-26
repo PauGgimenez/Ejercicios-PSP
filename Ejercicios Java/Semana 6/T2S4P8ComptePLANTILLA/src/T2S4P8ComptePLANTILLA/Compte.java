@@ -10,18 +10,18 @@ class Compte {
 
 	// torna el saldo
 	int getSaldo() {
-
+		return this.saldo;
 	}// --------------------------------
 
 	// resta la quantitat al saldo
 	void restar(int cantidad) {
-
+		this.saldo = saldo - cantidad;
 	}// -----------------------------------
 
 	// comprova que es puga retirar diners i els retira
-	void RetirarDiners(int cant, String nom) {
+	public synchronized void RetirarDiners(int cant, String nom) {
 		if (getSaldo() >= cant) {
-			System.out.println(nom + " va a retirar saldo (actual és: " + getSaldo() + ")");
+			System.out.println(nom + " va a retirar saldo (actual ï¿½s: " + getSaldo() + ")");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException ex) {
