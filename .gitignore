@@ -1,0 +1,6 @@
+# Compilados de Java
+*.class
+
+# Compilados de C
+*.o
+*.out
