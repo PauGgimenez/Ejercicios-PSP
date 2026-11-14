@@ -3,17 +3,17 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#define MIDA_BUFFFER 80
+
 #define TRUE 1
 
 
 int main (void) {
 
 	int fp;
-	char buffer[MIDA_BUFFFER];
+	char buffer[80];
 	int nbytes;
 
-	mknod("FIFO1",S_IFOFO|0660,0);
+	mknod("FIFO1",S_IFIFO|0660,0);
 
 fp = open("FIFO1", O_RDONLY);
     if (fp == -1) {
@@ -22,7 +22,7 @@ fp = open("FIFO1", O_RDONLY);
     }
 
     // Lee mientras haya datos transmitidos desde el productor
-    while ((nbytes = read(fp, buffer, MIDA_BUFFER - 1)) > 0) {
+    while ((nbytes = read(fp, buffer, 80 - 1)) > 0) {
         buffer[nbytes] = '\0';
         printf("Cadena rebuda: %s", buffer);
     }
