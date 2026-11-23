@@ -1,0 +1,12 @@
+3. Productor-Consumidor interactivo en bucle con FIFO (mknod)
+Enunciado:
+Crea dos programas independientes (escritor.c y lector.c) 
+que se comuniquen mediante una tubería con nombre llamada "CANAL_EXAMEN". 
+El escritor pedirá frases por teclado en bucle 
+y las enviará por el FIFO hasta que el usuario introduzca la palabra "FIN". 
+El lector irá mostrando por pantalla cada frase que reciba y, 
+cuando detecte "FIN", cerrará el descriptor y eliminará el archivo FIFO del sistema con unlink().
+
+Te sirve de plantilla para: ejercicios con procesos no emparentados, 
+lectura de cadenas con espacios (fgets), 
+limpieza del salto de línea (\n) para comparar con strcmp, y gestión limpia de mknod + unlink.
